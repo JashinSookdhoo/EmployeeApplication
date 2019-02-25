@@ -27,6 +27,8 @@ namespace EmployeeApplication.Models
                 else
                 {
                     return db.Database.SqlQuery<EmployeeByDept>("EXEC dbo.EmployeeByDept ").ToList();
+
+
                 };
             }
 
