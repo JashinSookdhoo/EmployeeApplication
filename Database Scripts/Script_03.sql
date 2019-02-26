@@ -23,3 +23,7 @@ CREATE TABLE [dbo].[Employees](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
 
+INSERT INTO [dbo].[Employees](EmployeeId,FirstName,LastName,DateOfBirth,Sex,Email,DepartmentId)VALUES('020387512437','John','WICK','1987-03-02','M','jsnow@example.co.za','ADMN')
+INSERT INTO [dbo].[Employees](EmployeeId,FirstName,LastName,DateOfBirth,Sex,Email,DepartmentId)VALUES('091176453489','Frank','Castle','1976-11-09','M','fcastle@example.co.za','SAL')
+INSERT INTO [dbo].[Employees](EmployeeId,FirstName,LastName,DateOfBirth,Sex,Email,DepartmentId)VALUES('020566512445','Nicole','Grey','1966-05-02','M','jsnow@example.co.za','IT')
+

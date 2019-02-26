@@ -19,4 +19,7 @@ CREATE TABLE [dbo].[Departments](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
 
-
+INSERT INTO [dbo].[Departments]([DepartmentId],[Description],[SeqNo])VALUES('ALL','All Departments',1)
+INSERT INTO [dbo].[Departments]([DepartmentId],[Description],[SeqNo])VALUES('ADMN','Administration',2)
+INSERT INTO [dbo].[Departments]([DepartmentId],[Description],[SeqNo])VALUES('IT','IT',3)
+INSERT INTO [dbo].[Departments]([DepartmentId],[Description],[SeqNo])VALUES('SAL','Sales',4)
