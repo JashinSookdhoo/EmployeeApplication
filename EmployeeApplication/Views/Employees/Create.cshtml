@@ -4,7 +4,7 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
+<h2>Add Employee</h2>
 
 
 @using (Html.BeginForm()) 
@@ -50,8 +50,24 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Sex, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Sex, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Sex, "", new { @class = "text-danger" })
+                @{
+                    List<SelectListItem> genderItems = new List<SelectListItem>();
+                    genderItems.Add(new SelectListItem
+                    {
+                        Text = "Male",
+                        Value = "M"
+                    });
+                    genderItems.Add(new SelectListItem
+                    {
+                        Text = "Female",
+                        Value = "F",
+                        Selected = true
+                    });
+                }
+                @Html.DropDownListFor(model => model.Sex, genderItems, null, htmlAttributes: new { @class = "form-control" })
+
+                @*@Html.EditorFor(model => model.Sex, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Sex, "", new { @class = "text-danger" })*@
             </div>
         </div>
 
@@ -66,19 +82,11 @@
         <div class="form-group">
             @Html.LabelFor(model => model.DepartmentId, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.DepartmentId, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownListFor(model => model.DepartmentId, null, new { @class = "form-control" })
+                @*@Html.EditorFor(model => model.DepartmentId, new { htmlAttributes = new { @class = "form-control" } })*@
                 @Html.ValidationMessageFor(model => model.DepartmentId, "", new { @class = "text-danger" })
             </div>
         </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Random, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Random, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Random, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Create" class="btn btn-default" />
@@ -88,7 +96,7 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to List", "Index","EmployeeByDepts")
 </div>
 
 @section Scripts {

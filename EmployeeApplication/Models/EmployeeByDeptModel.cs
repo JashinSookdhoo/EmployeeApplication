@@ -19,16 +19,14 @@ namespace EmployeeApplication.Models
 
             public List<EmployeeByDept> GetByDept(string DepartmentId)
             {
-                if (DepartmentId != null)
+                if (DepartmentId == null || DepartmentId == "ALL")
                 {
-                    SqlParameter dept = new SqlParameter("@Dept", DepartmentId);
-                    return db.Database.SqlQuery<EmployeeByDept>("EXEC dbo.EmployeeByDept @Dept ", dept).ToList();
+                    return db.Database.SqlQuery<EmployeeByDept>("EXEC dbo.EmployeeByDept ").ToList();
                 }
                 else
                 {
-                    return db.Database.SqlQuery<EmployeeByDept>("EXEC dbo.EmployeeByDept ").ToList();
-
-
+                    SqlParameter dept = new SqlParameter("@Dept", DepartmentId);
+                    return db.Database.SqlQuery<EmployeeByDept>("EXEC dbo.EmployeeByDept @Dept ", dept).ToList();
                 };
             }
 

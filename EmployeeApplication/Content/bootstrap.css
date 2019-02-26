@@ -1369,7 +1369,7 @@ a.text-warning:focus {
 }
 a.text-danger:hover,
 a.text-danger:focus {
-  color: #843534;
+  color: red;
 }
 .bg-primary {
   color: #fff;

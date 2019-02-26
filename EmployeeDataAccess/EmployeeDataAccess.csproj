@@ -69,6 +69,18 @@
     <Compile Include="Migrations\201902250833288_c.Designer.cs">
       <DependentUpon>201902250833288_c.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201902261706423_c1.cs" />
+    <Compile Include="Migrations\201902261706423_c1.Designer.cs">
+      <DependentUpon>201902261706423_c1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902261707171_j.cs" />
+    <Compile Include="Migrations\201902261707171_j.Designer.cs">
+      <DependentUpon>201902261707171_j.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902261710335_v.cs" />
+    <Compile Include="Migrations\201902261710335_v.Designer.cs">
+      <DependentUpon>201902261710335_v.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -97,6 +109,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201902250833288_c.resx">
       <DependentUpon>201902250833288_c.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902261706423_c1.resx">
+      <DependentUpon>201902261706423_c1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902261707171_j.resx">
+      <DependentUpon>201902261707171_j.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902261710335_v.resx">
+      <DependentUpon>201902261710335_v.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

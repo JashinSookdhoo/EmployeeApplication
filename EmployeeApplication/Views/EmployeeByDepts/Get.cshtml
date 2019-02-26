@@ -7,7 +7,20 @@
 <h2>Get</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <table>
+        <tr>
+            <th>
+                @Html.ActionLink("Create New", "Create")
+            </th>
+            <th>
+                @Html.DropDownList("DepartmentId", null, new { @class = "form-control" })
+            </th>
+            <th>
+                <input type="submit" class="form-control" value="Search"/>
+            </th>
+        </tr>
+    </table>
+
 </p>
 <table class="table">
     <tr>
@@ -25,12 +38,6 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Email)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DepartmentId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Random)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Description)
@@ -56,20 +63,29 @@
             @Html.DisplayFor(modelItem => item.Email)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.DepartmentId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Random)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.Description)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.EmployeeId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.EmployeeId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.EmployeeId })
+            @Html.ActionLink("Edit", "Edit", new { id = item.EmployeeId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.EmployeeId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.EmployeeId })
         </td>
     </tr>
+
 }
 
 </table>
+
+<script>
+    function DeptChange(e) {
+        var NewDept = e.value;
+        $(".Search").each(function () {
+            if (!Contains($(this).text().toLowerCase(), NewDept)) {
+                $(this).hide();
+            } else {
+                $(this).show();
+            }
+        });
+    };
+
+</script>

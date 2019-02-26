@@ -35,8 +35,7 @@ namespace EmployeeModel
         [Display(Name = "Department ID")]
         public string DepartmentId { get; set; }
 
-        [Display(Name = "Random Text")]
-        public string Random { get; set; }
+       
 
 
 

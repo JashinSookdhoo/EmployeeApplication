@@ -13,6 +13,7 @@ namespace EmployeeApplication.Controllers
 {
     public class EmployeesController : Controller
     {
+       
         private EmployeeContext db = new EmployeeContext();
 
         // GET: Employees
@@ -39,6 +40,7 @@ namespace EmployeeApplication.Controllers
         // GET: Employees/Create
         public ActionResult Create()
         {
+            ViewBag.DepartmentId = new SelectList(new Models.DepartmentModel().GetAll(), "DepartmentId", "Description");
             return View();
         }
 
@@ -53,7 +55,7 @@ namespace EmployeeApplication.Controllers
             {
                 db.Employees.Add(employee);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index","EmployeeByDepts");
             }
 
             return View(employee);

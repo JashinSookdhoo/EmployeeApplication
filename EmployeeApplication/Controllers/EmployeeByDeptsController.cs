@@ -18,17 +18,17 @@ namespace EmployeeApplication.Controllers
 
         // GET: EmployeeByDepts
         public ActionResult Index()
-        {            
-            return View(db.Database.SqlQuery<EmployeeByDept>("EXEC dbo.EmployeeByDept ").ToList());
-        }
-
-        // GET: EmployeeByDepts/Get/5
-        public ActionResult Get(string DepartmentId)
         {
-            return View(new Models.EmployeeByDeptModel().GetByDept(DepartmentId));
-            
+            ViewBag.DepartmentId = new SelectList(new Models.DepartmentModel().GetAll(), "DepartmentId", "Description");
+            return View(new Models.EmployeeByDeptModel().GetByDept(null));
         }
-
+        [HttpPost]
+        public ActionResult Index(string DepartmentId)
+        {
+            ViewBag.DepartmentId = new SelectList(new Models.DepartmentModel().GetAll(), "DepartmentId", "Description");
+            return View(new Models.EmployeeByDeptModel().GetByDept(DepartmentId));
+        }
+        
         // GET: EmployeeByDepts/Details/5
         public ActionResult Details(string id)
         {
